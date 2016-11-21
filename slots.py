@@ -85,11 +85,14 @@ def uni_abbr(name):
 
 
 def find_uni(name, iterable):
+    exact_name = [name]
     exact = []
     fuzzy = []
     fuzzy_search = uni_abbr(name)
+    if fuzzy_search == 'NTNU':
+        exact_name.append('Norwegian University of Science and Technology')
     for n in iterable:
-        if n == name:
+        if n in exact_name:
             exact.append(n)
         elif fuzzy_search in n.split():
             fuzzy.append(n)
