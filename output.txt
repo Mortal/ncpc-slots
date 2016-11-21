@@ -1,5 +1,5 @@
 21 Nordic universities sorted by second placement in NCPC
-(22 slots at NWERC filled by 14 universities)
+(22 slots at NWERC filled by 14 universities => 8 slots for seconds)
 Helsinki (placed 1, 3, 14, 16, ... at NCPC)
 - sent 2 teams to NWERC who placed 2, 14
 KTH (placed 2, 7, 23, 24, ... at NCPC)

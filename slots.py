@@ -134,9 +134,13 @@ def print_second_slot(ncpc_placements, nwerc_placements, uni_tr):
     unis = sorted(ncpc_placements.keys(), key=lambda k: second_placement[k])
     print('%s Nordic universities ' % len(unis) +
           'sorted by second placement in NCPC')
-    print('(%s slots at NWERC filled by %s universities)' %
-          (sum(len(nwerc_placements.get(v, ())) for k, v in uni_tr.items()),
-           sum(1 for k, v in uni_tr.items() if nwerc_placements.get(v, ()))))
+    nwerc_slots = sum(len(nwerc_placements.get(v, ()))
+                      for k, v in uni_tr.items())
+    nwerc_unis = sum(1 for k, v in uni_tr.items()
+                     if nwerc_placements.get(v, ()))
+    print('(%s slots at NWERC filled by %s universities ' %
+          (nwerc_slots, nwerc_unis) +
+          '=> %s slots for seconds)' % (nwerc_slots - nwerc_unis))
     for k in unis:
         ncpc_p = [str(v+1) for v in ncpc_placements[k]]
         if len(ncpc_p) > 5:
